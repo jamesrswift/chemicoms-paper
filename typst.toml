@@ -2,9 +2,11 @@
 name = "chemicoms-paper"
 version = "0.1.0"
 entrypoint = "src/lib.typ"
-authors = ["Typst GmbH <https://typst.app>"]
+authors = ["James R. Swift"]
 license = "MIT-0"
-description = "An IEEE-style paper template to publish at conferences and journals for Electrical Engineering, Computer Science, and Computer Engineering"
+repository = "https://github.com/JamesxX/chemicoms-paper"
+description = "An RSC-style paper template to publish at conferences and journals"
+exclude = ["README.md", "CHANGELOG.md", "Justfile", "docs", "tests", ".github"]
 
 [template]
 path = "template"

@@ -1,4 +1,4 @@
-#import "/src/template.typ": template, elements;
+#import "/src/lib.typ": template, elements;
 #import "credit.typ": *
 
 #set page(paper: "us-letter", margin: (left: 10mm, right: 10mm, top: 12mm, bottom: 15mm))
