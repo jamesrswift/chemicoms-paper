@@ -31,7 +31,7 @@
     (type: "Accepted Date", date: "00/00/20XX")
   ),
   doi: "00.0000/XXXXXXXXXX",
-  citation: [Swift _at. al._, _ChemR#sym.chi;iv_, 2024, *3*, 1---3]
+  citation: [L.I. Dolor, S. A. Consectetur and A. E. Sed, _ChemR#sym.chi;iv_, 2024, *3*, 1---3]
 )
 
 #let lorem-pars(n, each: 4) = {
@@ -44,7 +44,7 @@
 = Introduction
 
 #lorem-pars(1) @gree00
-#elements.equation($ sum_(k=0)^n k = 1 + ... + n $)
+$ sum_(k=0)^n k = 1 + ... + n $
 #elements.float(align: bottom, [\*Corresponding author])
 
 #lorem-pars(4) @netwok2020

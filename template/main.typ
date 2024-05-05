@@ -27,7 +27,7 @@
     (type: "Accepted Date", date: "00/00/20XX")
   ),
   doi: "00.0000/XXXXXXXXXX",
-  citation: [M. Haug L. and Mädje, _Ars Bibliologia_, 2024, *3*, 1---2]
+  citation: [M. Haug and L. Mädje, _Ars Bibliologia_, 2024, *3*, 1---2]
 )
 
 // #elements.float(align: bottom, [\*Corresponding author])
@@ -46,7 +46,7 @@ Overall, we believe that Typst represents a significant step forward in the fiel
 
 = Methods
 #lorem(90)
-#elements.equation($ a + b = gamma $)
+$ a + b = gamma $
 #lorem(200)
 
 #set heading(numbering: none)

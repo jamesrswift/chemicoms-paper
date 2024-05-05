@@ -3,4 +3,3 @@
 #import "elements/precis.typ": precis;
 #import "elements/footer.typ": footer;
 #import "elements/float.typ": float;
-#import "elements/equation.typ": equation;

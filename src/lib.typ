@@ -16,13 +16,17 @@
   )),
   header: z.dictionary(
     journal: z.content(default: [Journal Name]),
-    article-type: z.string(default: "Article"),
+    article-type: z.content(default: "Article"),
     article-color: z.color(default: rgb(167,195,212)),
     article-meta: z.content(default: [])
   ),
   keywords: z.array(z.string()),
   doi: z.optional(z.string()),
-  citation: z.content(default: [])
+  citation: z.content(default: []),
+  disable: z.dictionary(
+    header-journal: z.boolean(default: false),
+    footer: z.boolean(default: false)
+  )
 );
 
 #let template(body, ..args) = {
@@ -31,14 +35,15 @@
 
   // setup
   set text(font: "Century Gothic", lang: "en", size:9pt)
-  set page(footer: elements.footer(args))
+  set page(footer: if ( not args.disable.footer ) {elements.footer(args)})
+
   show heading: set block(above: 1.4em, below: 0.8em)
   show heading: set text(size: 12pt)
   set heading(numbering: "1.1")
   set par(leading: 0.618em, justify: true)
 
   v(1.2em)
-  elements.header-journal(args)
+  if ( not args.disable.header-journal ) {elements.header-journal(args)}
   elements.header-block(args)
   elements.precis(args)
   v(0.8em)
@@ -54,5 +59,7 @@
     align(left, par(justify: true, first-line-indent: 0cm)[*#c.supplement #c.counter.display(c.numbering)#c.separator*#c.body])
   }
 
+  set math.equation(numbering: "(Eq. 1)")
+  show math.equation: set block(spacing: 1em, above: 1.618em, below: 1em)
   body;
 }
