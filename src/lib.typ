@@ -26,6 +26,10 @@
   disable: z.dictionary(
     header-journal: z.boolean(default: false),
     footer: z.boolean(default: false)
+  ),
+  fonts: z.dictionary(
+    header: z.string(default: "Century Gothic"),
+    body: z.string(default: "CMU Sans Serif")
   )
 );
 
@@ -34,7 +38,7 @@
   let args = z.parse(args.named(), template-schema);
 
   // setup
-  set text(font: "Century Gothic", lang: "en", size:9pt)
+  set text(font: args.fonts.header, lang: "en", size:9pt)
   set page(footer: if ( not args.disable.footer ) {elements.footer(args)})
 
   show heading: set block(above: 1.4em, below: 0.8em)
@@ -49,7 +53,7 @@
   v(0.8em)
 
   // Main body.
-  set text( font: "CMU Sans Serif", lang: "en", size:9pt )
+  set text( font: args.fonts.body, lang: "en", size:9pt )
   set par( first-line-indent: 0.45cm );
   show par: set block(above: 0pt, below: 0.618em,)
   show: columns.with(2, gutter: 1.618em)

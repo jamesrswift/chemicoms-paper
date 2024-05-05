@@ -31,7 +31,10 @@
     (type: "Accepted Date", date: "00/00/20XX")
   ),
   doi: "00.0000/XXXXXXXXXX",
-  citation: [L.I. Dolor, S. A. Consectetur and A. E. Sed, _ChemR#sym.chi;iv_, 2024, *3*, 1---3]
+  citation: [L.I. Dolor, S. A. Consectetur and A. E. Sed, _ChemR#sym.chi;iv_, 2024, *3*, 1---3],
+  // fonts: (
+  //   //body: "Calibri"
+  // )
 )
 
 #let lorem-pars(n, each: 4) = {
