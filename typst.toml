@@ -13,4 +13,4 @@ exclude = ["README.md", "CHANGELOG.md", "Justfile", "docs", "tests", ".github"]
 [template]
 path = "template"
 entrypoint = "main.typ"
-thumbnail = "thumbnail.png"
+thumbnail = "thumbnails/1.png"

@@ -1,3 +1,5 @@
+set shell := ["powershell.exe", "-c"]
+
 root := justfile_directory()
 
 export TYPST_ROOT := root
@@ -17,6 +19,11 @@ test *args:
 # update test cases
 update *args:
 	typst-test run {{ args }}
+
+# generate thumbnail
+thumbnail *args:
+	typst compile {{args}} --format png template/main.typ "thumbnails/{n}.png"
+	oxipng -o 4 --strip all "thumbnails/*.png"
 
 # run ci suite
 ci: test doc
