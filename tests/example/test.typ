@@ -14,10 +14,13 @@
   ),
   authors: (
     (
-      name: "James Swift",
+      name: "L.I. Dolor",
+    ),
+        (
+      name: "S. A. Consectetur",
     ),
     (
-      name: "J. C. Reynolds", 
+      name: "A. E. Sed", 
       corresponding: true,
       orcid: ""
     ),

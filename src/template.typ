@@ -2,34 +2,32 @@
 #import "./elements.typ" as elements;
 
 #let template-schema = z.dictionary(
-    title: z.content(),
-    abstract: z.content(default: []),
-    dates: z.array(z.dictionary(
-      type: z.content(),
-      date: z.string()
-    )),
-    //paper: z.papersize(default: "a4"),
-    authors: z.array(z.dictionary(
-      name: z.string(),
-      corresponding: z.boolean(default: false),
-      orcid: z.optional(z.string())
-    )),
-    header: z.dictionary(
-      journal: z.content(default: [Journal Name]),
-      article-type: z.string(default: "Article"),
-      article-color: z.color(default: rgb(167,195,212)),
-      article-meta: z.content(default: [])
-    ),
-    keywords: z.array(z.string()),
-    doi: z.optional(z.string()),
-    citation: z.content(default: [])
-  );
+  title: z.content(),
+  abstract: z.content(default: []),
+  dates: z.array(z.dictionary(
+    type: z.content(),
+    date: z.string()
+  )),
+  //paper: z.papersize(default: "a4"),
+  authors: z.array(z.dictionary(
+    name: z.string(),
+    corresponding: z.boolean(default: false),
+    orcid: z.optional(z.string())
+  )),
+  header: z.dictionary(
+    journal: z.content(default: [Journal Name]),
+    article-type: z.string(default: "Article"),
+    article-color: z.color(default: rgb(167,195,212)),
+    article-meta: z.content(default: [])
+  ),
+  keywords: z.array(z.string()),
+  doi: z.optional(z.string()),
+  citation: z.content(default: [])
+);
 
 #let template(body, ..args) = {
 
   let args = z.parse(args.named(), template-schema);
-
-  
 
   // setup
   set text(font: "Droid Sans", lang: "en", size:9pt)
