@@ -1,5 +1,4 @@
-#import "/src/template.typ": template, elements;
-#import "credit.typ": *
+#import "@local/chemicoms-paper:0.1.0": template, elements;
 
 #set page(paper: "us-letter", margin: (left: 10mm, right: 10mm, top: 12mm, bottom: 15mm))
 
@@ -10,7 +9,7 @@
     article-color: rgb(86,111,127),
     article-type: "Preprint",
     article-meta: [Not Peer-Reviewed],
-    journal: place(image("rgb.svg", height: 34pt), dy:-0.25cm)
+    journal: [_Ars Bibliologia_]
   ),
   authors: (
     (
@@ -28,15 +27,8 @@
     (type: "Accepted Date", date: "00/00/20XX")
   ),
   doi: "00.0000/XXXXXXXXXX",
-  citation: [M. Haug L. and Mädje, _ChemR#sym.chi;iv_, 2024, *3*, 1---2]
+  citation: [M. Haug L. and Mädje, _Ars Bibliologia_, 2024, *3*, 1---2]
 )
-
-#let lorem-pars(n, each: 4) = {
-  let sentences = lorem(n * each * 30).split(". ")
-  range(n)
-    .map(i => sentences.slice(i * each, count: each).join(". ") + [.])
-    .join(parbreak())
-}
 
 // #elements.float(align: bottom, [\*Corresponding author])
 
@@ -54,29 +46,10 @@ Overall, we believe that Typst represents a significant step forward in the fiel
 
 = Methods
 #lorem(90)
-
-
 #elements.equation($ a + b = gamma $)
-
-
 #lorem(200)
 
 #set heading(numbering: none)
-= CRediT authorship contribution statement
-#CRediT("M. Haug", 
-  credits.concept, 
-  credits.dataCuration, 
-  credits.analysis, 
-  credits.investigation,
-  credits.visualization,
-  credits.methodology, 
-  credits.validation, 
-  credits.writingDraft)
-#CRediT("L. Mädje",  
-  credits.dataCuration, 
-  credits.analysis, 
-  credits.investigation,
-  credits.visualization)
   
 = Conflicts of Interest
 The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript and there is no financial interest to report.

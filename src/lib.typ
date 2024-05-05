@@ -30,7 +30,7 @@
   let args = z.parse(args.named(), template-schema);
 
   // setup
-  set text(font: "Droid Sans", lang: "en", size:9pt)
+  set text(font: "Century Gothic", lang: "en", size:9pt)
   set page(footer: elements.footer(args))
   show heading: set block(above: 1.4em, below: 0.8em)
   show heading: set text(size: 12pt)
