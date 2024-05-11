@@ -10,7 +10,7 @@
         ..args.dates.map( entry =>{
           return (
             text(size: 7pt, entry.type),
-            text(size: 7pt, entry.date)
+            text(size: 7pt, entry.date.display())
           )
       }).flatten())
 
@@ -22,8 +22,8 @@
 
 #let author(author) = {
   text(author.name)
-  if ( author.corresponding ) [#strong[\*]]
-  if ( author.orcid != none ) {
+  if ( author.corresponding == true ) [#strong[\*]]
+  if ( author.at("orcid", default: none) != none ) {
     h(0.23em)
     link("http://orcid.org/" + author.orcid, fa-icon("orcid", fa-set: "Brands", fill: rgb(166,206,57)))
   }
@@ -33,7 +33,11 @@
   block(text(size: 15pt, weight:500, args.title))
   args.authors.map(author).join(", ", last: " and ")
   v(1.618em, weak: true)
-  par(args.abstract)
+
+  for ((title, content)) in args.abstracts {
+    if (args.abstracts.len() > 1){block[*#title*]}
+    content
+  }
 }
 
 

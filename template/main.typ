@@ -2,14 +2,21 @@
 
 #set page(paper: "us-letter", margin: (left: 10mm, right: 10mm, top: 12mm, bottom: 15mm))
 
+
 #show: template.with(
   title: [A typesetting system to untangle the scientific writing process],
-  abstract: [The process of scientific writing is often tangled up with the intricacies of typesetting, leading to frustration and wasted time for researchers. In this paper, we introduce Typst, a new typesetting system designed specifically for scientific writing. Typst untangles the typesetting process, allowing researchers to compose papers faster. In a series of experiments we demonstrate that Typst offers several advantages, including faster document creation, simplified syntax, and increased ease-of-use.],
+  abstract: (
+    [The process of scientific writing is often tangled up with the intricacies of typesetting, leading to frustration and wasted time for researchers. In this paper, we introduce Typst, a new typesetting system designed specifically for scientific writing. Typst untangles the typesetting process, allowing researchers to compose papers faster. In a series of experiments we demonstrate that Typst offers several advantages, including faster document creation, simplified syntax, and increased ease-of-use.],
+    (
+      title: "Plain Language Abstract", 
+      content: lorem(50)
+    )
+  ),
+  venue: [_Ars Bibliologia_],
   header: (
-    article-color: rgb(86,111,127),
+    article-color: rgb("#657a86"),
     article-type: "Preprint",
     article-meta: [Not Peer-Reviewed],
-    journal: [_Ars Bibliologia_]
   ),
   authors: (
     (
@@ -22,9 +29,9 @@
     ),
   ),
   dates: (
-    (type: "Received Date", date: "00/00/20XX"),
-    (type: "Revised Date", date: "00/00/20XX"),
-    (type: "Accepted Date", date: "00/00/20XX")
+    (type: [Received Date], date: 2015),
+    (type: [Revised Date], date: datetime.today()),
+    (type: [Accepted Date], date: datetime.today())
   ),
   doi: "00.0000/XXXXXXXXXX",
   citation: [M. Haug and L. Mädje, _Ars Bibliologia_, 2024, *3*, 1---2]
