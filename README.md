@@ -23,5 +23,4 @@ This template with initialize your package with a sample call to the `template` 
 ```
 
 ## Media
-![image](./thumbnails/1.png)
-![image](./thumbnails/2.png)
+![image](./thumbnails/1.png "page-1") ![image](./thumbnails/2.png "page-2")
