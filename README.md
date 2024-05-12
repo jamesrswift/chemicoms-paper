@@ -23,4 +23,9 @@ This template with initialize your package with a sample call to the `template` 
 ```
 
 ## Media
-![image](./thumbnails/1.png "page-1") ![image](./thumbnails/2.png "page-2")
+
+<p align="center">
+  <img alt="Light" src="./thumbnails/1.png" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Dark" src="./thumbnails/2.png" width="45%">
+</p>
