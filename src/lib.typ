@@ -8,18 +8,20 @@
         article-type: z.content(default: "Article"),
         article-color: z.color(default: rgb(167,195,212)),
         article-meta: z.content(default: [])
-      )
+      ),
     ),
     fonts: z.dictionary(
-      (header: z.string(default: "Century Gothic"),
-      body: z.string(default: "CMU Sans Serif"))
+      (
+        header: z.string(default: "Century Gothic"),
+        body: z.string(default: "CMU Sans Serif")
+      ),
     )
   )
 );
 
 #let template(body, ..args) = {
 
-  let args = z.parse(args.named(), z.dictionary-join(z.schemas.pubmatter, template-schema));
+  let args = z.parse(args.named(), (z.schemas.pubmatter, template-schema));
 
   // setup
   set text(font: args.fonts.header, lang: "en", size:9pt)

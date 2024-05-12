@@ -23,9 +23,9 @@
     ),
   ),
   dates: (
-    (type: "Received Date", date: "00/00/20XX"),
-    (type: "Revised Date", date: "00/00/20XX"),
-    (type: "Accepted Date", date: "00/00/20XX")
+    (type: "Received Date", date: datetime.today()),
+    (type: "Revised Date", date: datetime.today()),
+    (type: "Accepted Date", date: datetime.today())
   ),
   doi: "00.0000/XXXXXXXXXX",
   citation: [M. Haug L. and Mädje, _Ars Bibliologia_, 2024, *3*, 1---2],

@@ -6,11 +6,11 @@
 #show: template.with(
   title: [Effects of $#sym.beta$-Cyclodextrin, Triacetin, Propylene Glycol, and Ethanol on the Release of Aroma Compounds from Aqueous Solutions],
   abstract: lorem(75),
+  venue: place(image("rgb.svg", height: 34pt), dy:-0.25cm),
   header: (
     article-color: rgb(86,111,127),
     article-type: "Preprint",
     article-meta: [Not Peer-Reviewed],
-    journal: place(image("rgb.svg", height: 34pt), dy:-0.25cm)
   ),
   authors: (
     (
@@ -26,9 +26,9 @@
     ),
   ),
   dates: (
-    (type: "Received Date", date: "00/00/20XX"),
-    (type: "Revised Date", date: "00/00/20XX"),
-    (type: "Accepted Date", date: "00/00/20XX")
+    (type: "Received Date", date: datetime.today()),
+    (type: "Revised Date", date: datetime.today()),
+    (type: "Accepted Date", date: datetime.today())
   ),
   doi: "00.0000/XXXXXXXXXX",
   citation: [L.I. Dolor, S. A. Consectetur and A. E. Sed, _ChemR#sym.chi;iv_, 2024, *3*, 1---3],

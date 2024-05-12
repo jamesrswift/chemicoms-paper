@@ -18,7 +18,7 @@ test *args:
 
 # update test cases
 update *args:
-	typst-test run {{ args }}
+	typst-test update {{ args }}
 
 # generate thumbnail
 thumbnail *args:
