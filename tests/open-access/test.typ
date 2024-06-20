@@ -5,13 +5,13 @@
 
 #show: template.with(
   title: [A typesetting system to untangle the scientific writing process],
-  abstract: [The process of scientific writing is often tangled up with the intricacies of typesetting, leading to frustration and wasted time for researchers. In this paper, we introduce Typst, a new typesetting system designed specifically for scientific writing. Typst untangles the typesetting process, allowing researchers to compose papers faster. In a series of experiments we demonstrate that Typst offers several advantages, including faster document creation, simplified syntax, and increased ease-of-use.],
+  abstract: ([The process of scientific writing is often tangled up with the intricacies of typesetting, leading to frustration and wasted time for researchers. In this paper, we introduce Typst, a new typesetting system designed specifically for scientific writing. Typst untangles the typesetting process, allowing researchers to compose papers faster. In a series of experiments we demonstrate that Typst offers several advantages, including faster document creation, simplified syntax, and increased ease-of-use.], (title: "Plain Language Summary", content: lorem(20))),
   header: (
     article-color: rgb("#7a9371"),
     article-type: [Open Access] + open-access-icon(color: white, height: auto, baseline: 15%),
     //article-meta: [Not Peer-Reviewed],
-    journal: [_Ars Bibliologia_]
   ),
+  venue: [_Ars Bibliologia_],
   authors: (
     (
       name: "Martin Haug",
@@ -29,8 +29,4 @@
   ),
   doi: "00.0000/XXXXXXXXXX",
   citation: [M. Haug L. and Mädje, _Ars Bibliologia_, 2024, *3*, 1---2],
-  disable: (
-    header-journal: true,
-    footer: true,
-  )
 )
