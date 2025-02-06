@@ -41,6 +41,15 @@
     open-access: z.boolean(optional: true),
     venue: z.content(optional: true),
     doi: z.string(optional: true),
+    affiliations: z.array(
+      z.dictionary(
+        (
+          label: z.string(),
+          affiliation: z.string()
+        ),
+    ),
+      pre-transform: z.coerce.array
+    ),
     keywords: z.array(z.string()),
     dates: z.array(
       z.dictionary(

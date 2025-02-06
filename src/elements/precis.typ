@@ -22,6 +22,9 @@
 
 #let author(author) = {
   text(author.name)
+  if ( author.at("affiliations", default: none) != none ) {
+    author.affiliations.map(it => super(typographic: false, size: 0.75em)[#it]).join(super(typographic: false, size:0.75em)[,])
+  }
   if ( author.corresponding == true ) [#strong[\*]]
   if ( author.at("orcid", default: none) != none ) {
     h(0.23em)
@@ -29,11 +32,18 @@
   }
 }
 
+#let affil(affiliation) = {
+  super(typographic: false, size: 0.75em)[#affiliation.label]
+  h(0.23em)
+  text(affiliation.affiliation)
+}
+
 #let precis-title-authors-abstract(args) = {
   block(text(size: 15pt, weight:500, args.title))
   args.authors.map(author).join(", ", last: " and ")
   v(1.618em, weak: true)
-
+  args.affiliations.map(affil).join("\n")
+  v(1.618em, weak: true)
   for ((title, content)) in args.abstracts {
     if (args.abstracts.len() > 1){block[*#title*]}
     content

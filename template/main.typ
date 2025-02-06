@@ -1,4 +1,4 @@
-#import "@local/chemicoms-paper:0.1.0": template, elements;
+#import "../src/lib.typ": template, elements;
 
 #set page(paper: "us-letter", margin: (left: 10mm, right: 10mm, top: 12mm, bottom: 15mm))
 
@@ -21,17 +21,29 @@
   authors: (
     (
       name: "Martin Haug",
+      affiliations: ("1")
     ),
     (
       name: "Laurenz Mädje", 
       corresponding: true,
-      orcid: ""
+      orcid: "",
+      affiliations: ("1", "2")
     ),
   ),
   dates: (
     (type: [Received Date], date: 2015),
     (type: [Revised Date], date: datetime.today()),
     (type: [Accepted Date], date: datetime.today())
+  ),
+  affiliations: (
+    (
+      label: "1",
+      affiliation: "Typst GmbH"
+    ),
+    (
+      label: "2",
+      affiliation: "Some other affiliation"
+    )
   ),
   doi: "00.0000/XXXXXXXXXX",
   citation: [M. Haug and L. Mädje, _Ars Bibliologia_, 2024, *3*, 1---2]
